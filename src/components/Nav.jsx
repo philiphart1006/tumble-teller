@@ -27,11 +27,12 @@ export default function Nav(){
       </button>
     </header>
 
-    <Modal show={show} fullscreen={true} onHude={() => setShow(false)}>
+    <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
         <nav onClick={() => setShow(false)}>
           <Link to="/national"><i className='bold display-2'>Carbon Intensity by Region</i></Link>
           <Link to="/postcode"><i className='bold display-2'>Carbon Intensity for your location</i></Link>
+          <Link to="/combo"><i className='bold display-2'>Should you use your Tumble Dryer today?</i></Link>
         </nav>
       </Modal.Header>
     </Modal>

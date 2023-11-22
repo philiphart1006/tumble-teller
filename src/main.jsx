@@ -12,9 +12,10 @@ import Home from './components/Home'
 import ErrorPage from './components/ErrorPage'
 import National from './components/National'
 import Postcode from './components/Postcode'
+import Combo from './components/Combo'
 
 // Loaders
-import { getAllRegions, getPostcode } from './utils/loaders/carbon'
+import { getAllRegions, getPostcode, getCombo } from './utils/loaders/carbon'
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         path: '/postcode',
         element: <Postcode />,
         action: async ({ request }) => getPostcode(request)
+      },
+      {
+        path: '/combo',
+        element: <Combo />,
+        action: async ({ request }) => getCombo(request)
       },
     ]
   }
