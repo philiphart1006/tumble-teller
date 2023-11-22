@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       {
         path: '/postcode',
         element: <Postcode />,
-        loader: async ({ request }) => getPostcode(request)
+        action: async ({ request }) => getPostcode(request)
       },
     ]
   }
