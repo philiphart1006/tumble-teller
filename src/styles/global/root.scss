@@ -1,0 +1,29 @@
+#root {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: calc(100vh - 12 * $standard-padding);
+  background-color: $light-grey;
+  padding: 6 * $standard-padding;
+
+  img {
+    width: 40%;
+    border-radius: 20px;
+  }
+
+  h4 {
+    width: 60%;
+    align-self: center;
+    margin-top: $standard-padding;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: $light-teal
+}

@@ -7,6 +7,8 @@ import Modal from 'react-bootstrap/Modal'
 
 // Images
 import logoSq from "../assets/ttlogosq.png"
+import logoWWF from "../assets/wwf.jpeg"
+import logoOx from "../assets/oxford.png"
 
 
 export default function Nav(){
@@ -18,9 +20,13 @@ export default function Nav(){
     <>
     <header>
       {/* Icon linking back to homepage */}
-      <Link to="/" className='logo0icon' src={logoSq} alt='tt logo' ></Link>
+      <div className='logos'>
+        <Link to="/" ><img className='logo-icon' src={logoSq} alt='tt logo' /></Link>
+        <a href="https://wwf.org.uk" ><img className='logo-icon' src={logoWWF} alt='wwf logo' /></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" ><img className='logo-icon' src={logoOx} alt='wwf logo' /></a>
+      </div>
       {/* Hamburger nav menu */}
-      <button className='nav-toggle' onClick={() => setShow(true)}>
+      <button className='hamburger' onClick={() => setShow(true)}>
         <span></span>
         <span></span>
         <span></span>
@@ -30,9 +36,9 @@ export default function Nav(){
     <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
         <nav onClick={() => setShow(false)}>
-          <Link to="/national"><i className='bold display-2'>Carbon Intensity by Region</i></Link>
-          <Link to="/postcode"><i className='bold display-2'>Carbon Intensity for your location</i></Link>
-          <Link to="/combo"><i className='bold display-2'>Should you use your Tumble Dryer today?</i></Link>
+          <Link to="/national"><i className='bold display-4'>Carbon Intensity by Region</i></Link>
+          <Link to="/postcode"><i className='bold display-4'>Carbon Intensity for your location</i></Link>
+          <Link to="/combo"><i className='bold display-4'>Should you use your Tumble Dryer today?</i></Link>
         </nav>
       </Modal.Header>
     </Modal>

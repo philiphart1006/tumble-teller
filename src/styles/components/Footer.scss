@@ -1,0 +1,21 @@
+.footer{
+  background-color: $light-teal;
+  height: calc(6 * $standard-padding);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: $standard-padding (2 * $standard-padding);
+  
+
+  a {
+    color: $dark-grey;
+  }
+
+  .citations{
+    font-size: small;
+    max-width: 70%;
+    text-align: left;
+  }
+}

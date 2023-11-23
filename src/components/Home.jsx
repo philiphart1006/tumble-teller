@@ -7,10 +7,8 @@ import { Link } from 'react-router-dom'
 export default function Home(){
   return (
     <>
-    <h1>Welcome to Tumble Teller!</h1>
     <Link to="/"><img src={logoRect} alt="tt logo" /></Link>
-    <h2></h2>
-    <p></p>
+    <h4>Tumble Teller makes use of the <a href='https://carbonintensity.org.uk/'>CarbonIntensity</a> & <a href='https://openweathermap.org/'>OpenWeather</a> free APIs to help you determine how much carbon your local power grid is currently using, your local weather conditions, and - in turn - whether you should use your tumble dryer.</h4>
     </>
   )
 }
