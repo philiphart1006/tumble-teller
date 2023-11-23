@@ -29,12 +29,16 @@ export default function National(){
       </Form>
       { region
         ?
-        <Container fluid>
+        <Container fluid className='individual-container'>
           <Row>
-                <Col>
+                <Col className='region-container'>
                   <p>{regionName}</p>
-                  <p>{regionData.forecast}</p>
-                  <p>{regionData.index}</p>
+                  <p>{regionData.forecast} gCO<sub>2</sub>/kWh</p>
+                  <p className={`
+                    ${regionData.index.includes('low') ? 'low' : ''} 
+                    ${regionData.index.includes('moderate') ? 'moderate' : ''} 
+                    ${regionData.index.includes('high') ? 'high' : ''} 
+                    `}>{regionData.index}</p>
                 </Col>
           </Row>
         </Container>

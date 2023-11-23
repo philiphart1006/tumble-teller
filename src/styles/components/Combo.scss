@@ -1,0 +1,15 @@
+form {
+  align-self: center;
+  width: 50%;
+  * {
+  margin: $standard-padding;
+  border-radius: 5px;
+  }
+  button{
+    background-color: $dark-grey;
+    color: $light-grey;
+  }
+  input{
+    width: 50%;
+  }
+}

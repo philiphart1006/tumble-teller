@@ -14,7 +14,7 @@ export default function National(){
 
   return (
     <>
-      <h1 className='bold display-6'>Welcome to the carbon intensity by region page</h1>
+      <h1 className='bold display-6'>Carbon intensity by region</h1>
       <Container fluid>
         <Row>
           { regionsArr.map((region) => {
@@ -22,15 +22,19 @@ export default function National(){
             return (
               <Col
               key={regionid}
-              xs={6}
+              xs={5}
               md={4}
               lg={3}
               xl={2}
               className='region-container'
               >
-                <p>Region - {shortname}</p>
-                <p>{intensity.forecast}</p>
-                <p>Index - {intensity.index}</p>
+                <p>{shortname}</p>
+                <p>{intensity.forecast} gCO<sub>2</sub>/kWh</p>
+                <p className={`
+                    ${intensity.index.includes('low') ? 'low' : ''} 
+                    ${intensity.index.includes('moderate') ? 'moderate' : ''} 
+                    ${intensity.index.includes('high') ? 'high' : ''} 
+                    `}>{intensity.index}</p>
               </Col>
             )
           })}

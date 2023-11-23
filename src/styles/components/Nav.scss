@@ -4,6 +4,8 @@ header {
   display: flex;
   justify-content: space-between;
   padding: $standard-padding;
+  position: fixed;
+  width: 100vw;
 
   Link {
     width: 40px;

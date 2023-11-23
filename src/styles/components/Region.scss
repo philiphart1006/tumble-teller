@@ -1,3 +1,28 @@
 .region-container {
 background-color: rgba(255, 255, 255, 0.302);
+margin: $standard-padding;
+padding: calc(0.5*$standard-padding);
+
+.low{
+background-color: rgba(0, 128, 0, 0.232);
+}
+.moderate{
+background-color: rgba(124, 128, 0, 0.232);
+}
+.high{
+background-color: rgba(128, 0, 19, 0.232);
+}
+}
+
+.individual-container{
+  width: 50%;
+  .region-container{
+    padding: calc(2 * $standard-padding);
+  }
+  
+}
+
+.row{
+  display: flex;
+  justify-content: center;
 }
