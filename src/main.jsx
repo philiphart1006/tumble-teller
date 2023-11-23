@@ -10,12 +10,14 @@ import './styles/main.scss'
 import App from './App.jsx'
 import Home from './components/Home'
 import ErrorPage from './components/ErrorPage'
-import National from './components/National'
+import National from './components/National.jsx'
 import Postcode from './components/Postcode'
 import Combo from './components/Combo'
+import Forecast from './components/Forecast.jsx'
+import Comboforecast from './components/Comboforecast.jsx'
 
 // Loaders
-import { getAllRegions, getPostcode, getCombo } from './utils/loaders/carbon'
+import { getAllRegions, getPostcode, getCombo, getForecast, getWeatherForecast} from './utils/loaders/carbon'
 
 const router = createBrowserRouter([
   {
@@ -38,9 +40,20 @@ const router = createBrowserRouter([
         action: async ({ request }) => getPostcode(request)
       },
       {
+        path: '/forecast',
+        element: <Forecast />,
+        loader: getForecast
+      },
+      {
         path: '/combo',
         element: <Combo />,
         action: async ({ request }) => getCombo(request)
+      },
+      {
+        path: '/comboforecast',
+        element: <Comboforecast />,
+        loader: getForecast,
+        action: async ({ request }) => getWeatherForecast(request)
       },
     ]
   }

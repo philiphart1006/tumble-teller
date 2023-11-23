@@ -27,15 +27,15 @@ header {
   span{
     background-color: $dark-grey;
     display: block;
-    height: $standard-padding;
-    margin-bottom: calc(0.5*$standard-padding);
+    height: calc(0.5 * $standard-padding);
+    margin-bottom: calc(0.7*$standard-padding);
     width: calc(5* $standard-padding);
   }
 }
 
 .modal-header {
   flex-grow: 1;
-  background-color: $light-grey;
+  background-color: $dark-grey;
   button {
     position: absolute;
     top: calc(2*$standard-padding);

@@ -37,8 +37,10 @@ export default function Nav(){
       <Modal.Header closeButton>
         <nav onClick={() => setShow(false)}>
           <Link to="/national"><i className='bold display-4'>Carbon intensity by region</i></Link>
-          <Link to="/postcode"><i className='bold display-4'>Carbon intensity for your location</i></Link>
+          <Link to="/postcode"><i className='bold display-4'>Carbon intensity for your location now</i></Link>
+          <Link to="/forecast"><i className='bold display-4'>Nationwide carbon intensity forecast (48 hours)</i></Link>
           <Link to="/combo"><i className='bold display-4'>Should you use your tumble dryer today?</i></Link>
+          <Link to="/comboforecast"><i className='bold display-4'>When should you use your tumble dryer?</i></Link>
         </nav>
       </Modal.Header>
     </Modal>

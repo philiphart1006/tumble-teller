@@ -26,15 +26,18 @@ export default function Combo(){
   const main = weather?.weather[0].main
   const windspeed = weather?.wind.speed
   const temp = weather?.main.temp - 273.1
+  const humidity = weather?.main.humidity
 
   let recommendation
 
-  if(main?.includes('rain')){
+  if(main?.includes('rain')||main?.includes('storm')||main?.includes('snow')){
       recommendation = "It's too wet out - best use the tumble dryer"}
       else if(temp < 5){
         recommendation = "It's bloomin' cold - best use the tumble dryer"
       } else if(windspeed < 1){
         recommendation = "There's not even a light zephyr - best use the tumble dryer"
+      } else if(humidity > 90){
+        recommendation = "The air's a bit moist - best use the tumble dryer"
       } else if(regionData?.index.includes('high')){
         recommendation = "Your local power grid is generating too much CO2 - ideally, hang your clothes outside to dry"
       } else if(regionData?.index.includes('low')){
@@ -51,7 +54,7 @@ export default function Combo(){
       <Form className='form' method="POST">
         <label hidden htmlFor="postcode">Postcode start</label>
         <input type="text" name='postcode' placeholder="(e.g. SW1A)" />
-        <button type="submit" variant="primary">Submit</button>
+        <button type="submit">Submit</button>
       </Form>
       { region
         ?
@@ -61,7 +64,7 @@ export default function Combo(){
                 <Col className='region-container'>
                   <h5>Current carbon intensity</h5>&nbsp;
                   <p>{regionName}</p>
-                  <p>{regionData.forecast}</p>
+                  <p>{regionData.forecast} gCO<sub>2</sub>/kWh</p>
                   <p className={`
                     ${regionData.index.includes('low') ? 'low' : ''} 
                     ${regionData.index.includes('moderate') ? 'moderate' : ''} 
@@ -72,7 +75,7 @@ export default function Combo(){
                 <h5>Local weather</h5>&nbsp;
                   <p
                   className={`
-                  ${main.includes('rain') ? 'high' : ''}
+                  ${(main.includes('rain')||main.includes('storm')||main.includes('snow')) ? 'high' : ''}
                   ${main.includes('sunny') ? 'low' : ''}
                   `}
                   >Conditions: {main}</p>
@@ -87,6 +90,11 @@ export default function Combo(){
                   ${temp > 20 ? 'low' : ''}
                   `}
                   >Temp: {temp.toFixed(1)} &deg;C</p>
+                  <p
+                  className={`
+                  ${humidity > 90 ? 'high' : ''}
+                  `}
+                  >Humidity: {humidity.toFixed(0)} %</p>
                 </Col>
           </Row>
         </Container>

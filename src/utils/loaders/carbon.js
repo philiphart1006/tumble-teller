@@ -13,6 +13,35 @@ export async function getPostcode(request){
   return res.json()
 }
 
+export async function getForecast(){
+  const now = new Date().toISOString()
+  const nowArray = now.split('')
+  nowArray[14]=0
+  nowArray[15]=0
+  const nowHour = nowArray.join('')
+  console.log(nowHour)
+  const res = await fetch(`https://api.carbonintensity.org.uk/intensity/${nowHour}/fw48h`)
+  console.log('Carbon intensity result: ',res)
+  return res.json()
+}
+
+// export async function getLongForecast(){
+//   const now = new Date().toISOString()
+//   const nowArray = now.split('')
+//   nowArray[11]=1
+//   nowArray[12]=2
+//   nowArray[14]=0
+//   nowArray[15]=0
+//   const nowHour = nowArray.join('')
+//   const nowDate = new Date(nowHour)
+//   const future = new Date(nowDate.setDate(nowDate.getDate() + 5)).toISOString()
+//   console.log(future)
+//   console.log(`Endpoint being used: https://api.carbonintensity.org.uk/intensity/${nowHour}/${future}`)
+//   const res = await fetch(`https://api.carbonintensity.org.uk/intensity/${nowHour}/${future}`)
+//   console.log('Carbon intensity result: ',res)
+//   return res.json()
+// }
+
 
 export async function getPostcodeCombo(postcode){
   const res = await fetch(`https://api.carbonintensity.org.uk/regional/postcode/${postcode.postcode}`)
@@ -36,4 +65,14 @@ export async function getCombo(request){
     "carbonResults": await getPostcodeCombo(postcode),
     "weatherResults": await getWeather(postcode)
   }
+}
+
+export async function getWeatherForecast(request){
+  const formData = await request.formData()
+  const postcode = Object.fromEntries(formData.entries())
+  console.log('getWeather function executing')
+  console.log(import.meta.env.VITE_SECRET_KEY)
+  const res = await fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${postcode.postcode},GB&appid=${import.meta.env.VITE_SECRET_KEY}`)
+  console.log('getWeather res: ',res)
+  return res.json()
 }

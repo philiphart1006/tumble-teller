@@ -9,7 +9,7 @@ import Row from "react-bootstrap/Row"
 import Col from 'react-bootstrap/Col'
 
 // ! Default function
-export default function National(){
+export default function Postcode(){
 
   // State
   const [ postcode, setPostcode] = useState('')
@@ -21,11 +21,11 @@ export default function National(){
 
   return (
     <>
-      <h1>Welcome to the carbon intensity by region page</h1>
+      <h1>Carbon intensity for your region today</h1>
       <Form className='form' method="POST">
         <label hidden htmlFor="postcode">Postcode start</label>
         <input type="text" name='postcode' placeholder="Postcode start (e.g. SW1A)" />
-        <button type="submit">Submit</button>
+        <button type="submit">⏎</button>
       </Form>
       { region
         ?
