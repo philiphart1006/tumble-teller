@@ -1,5 +1,5 @@
 .region-container {
-background-color: rgba(255, 255, 255, 0.302);
+background-color: rgba(255, 255, 255, 0.502);
 margin: $standard-padding;
 padding: calc(0.5*$standard-padding);
 
@@ -22,9 +22,7 @@ background-color: rgba(128, 0, 19, 0.232);
   
 }
 
-.stretch-container{
-  padding-bottom: calc(4.5 * $standard-padding)
-}
+
 
 .row{
   display: flex;

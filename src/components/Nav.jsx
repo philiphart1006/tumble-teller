@@ -22,8 +22,8 @@ export default function Nav(){
       {/* Icon linking back to homepage */}
       <div className='logos'>
         <Link to="/" ><img className='logo-icon' src={logoSq} alt='tt logo' /></Link>
-        <a href="https://wwf.org.uk" ><img className='logo-icon' src={logoWWF} alt='wwf logo' /></a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" ><img className='logo-icon' src={logoOx} alt='wwf logo' /></a>
+        <a href="https://wwf.org.uk" target="_blank" ><img className='logo-icon' src={logoWWF} alt='wwf logo' /></a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" ><img className='logo-icon' src={logoOx} alt='wwf logo' /></a>
       </div>
       {/* Hamburger nav menu */}
       <button className='hamburger' onClick={() => setShow(true)}>

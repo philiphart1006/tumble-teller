@@ -19,9 +19,10 @@ export default function Comboforecast(){
   console.log('Weather array: ',{weatherObj})
   const weatherArr = weatherObj?.list
 
-  // Retrieve weather data
+  // Retrieve carbon intensity data
   const forecasts = useLoaderData()
   const forecastsArr = forecasts?.data
+
   // Only return every other index for hourly rather than half hourly data
   const forecastsHour = forecastsArr.filter(function(element, index, array){
     return (index % 2 === 0);
@@ -31,6 +32,32 @@ export default function Comboforecast(){
     const endHour = endTime.getHours()
     return (endHour % 3 === 0);
   })
+
+  // If current hour is divisible by 3, remove first result from forecastThreeHour array
+  const now = new Date()
+  console.log(now)
+  const currentHour = now.getHours()
+  console.log(currentHour)
+  if (currentHour % 3 === 0){
+    forecastsThreeHour.shift()
+  }
+  
+  //! Remove nighthours
+  // Remove from carbon intensity
+  const forecastsFinal = forecastsThreeHour.filter(function(forecast){
+    const forecastDate = new Date (forecast.to)
+    const forecastHour = forecastDate.getHours()
+    return (forecastHour > 8 && forecastHour < 19)
+  })
+  // Remove from weather
+  const weatherFinal = weatherArr?.filter(function(weather){
+    const weatherDate = new Date (weather.dt * 1000)
+    const weatherHour = weatherDate.getHours()
+    return (weatherHour > 8 && weatherHour < 19)
+  })
+
+  // Set weather array to same length as carbon intensity array
+  weatherFinal.length = forecastsFinal?.length
 
   return (
     <>
@@ -46,7 +73,7 @@ export default function Comboforecast(){
         <section className='results'>
         <Container fluid>
             <Col>
-            { forecastsThreeHour.map((forecast) => {
+            { forecastsFinal.map((forecast) => {
               const { shortname, regionid, intensity, to } = forecast
               const datetime = new Date(to)
               const date = `${datetime.getDate()}/${datetime.getMonth()}/${datetime.getFullYear()}`
@@ -56,15 +83,15 @@ export default function Comboforecast(){
                 key={to}
                 className='region-container stretch-container'
                 >
-                  <p>{date}</p>
-                  <p>{time}</p>
+                  <p>{date} {time}</p>
+                  <p>-</p>
                   <p>{intensity.forecast} gCO<sub>2</sub>/kWh</p>
                   <p className={`
                       ${intensity.index.includes('low') ? 'low' : ''} 
                       ${intensity.index.includes('moderate') ? 'moderate' : ''} 
                       ${intensity.index.includes('high') ? 'high' : ''} 
                       `}>{intensity.index}</p>
-                  {/* <p>Filler</p> */}
+                  <p>-</p>
                 </Row>
               )
               })}
@@ -73,7 +100,7 @@ export default function Comboforecast(){
           <Container fluid>
             <Col>
             {/* This is where weather forecast array should be mapped out into rows */}
-            { weatherArr.map((weather, idx) => {
+            { weatherFinal.map((weather, idx) => {
               const main = weather?.weather[0].main
               const windspeed = weather?.wind.speed
               const temp = weather?.main.temp - 273.1
