@@ -14,17 +14,23 @@ export default function National(){
 
   return (
     <>
-      <h1>Welcome to the carbon intensity by region page</h1>
+      <h1 className='bold display-6'>Welcome to the carbon intensity by region page</h1>
       <Container fluid>
         <Row>
           { regionsArr.map((region) => {
             const { shortname, regionid, intensity } = region
             return (
               <Col
-              key={regionid}>
-                <p>{shortname}</p>
+              key={regionid}
+              xs={6}
+              md={4}
+              lg={3}
+              xl={2}
+              className='region-container'
+              >
+                <p>Region - {shortname}</p>
                 <p>{intensity.forecast}</p>
-                <p>{intensity.index}</p>
+                <p>Index - {intensity.index}</p>
               </Col>
             )
           })}

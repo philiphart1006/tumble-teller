@@ -1,4 +1,5 @@
 import { formToObj } from '../helpers/common'
+import { secretKey } from '../../.env'
 
 export async function getAllRegions(){
   const res = await fetch('https://api.carbonintensity.org.uk/regional')
@@ -32,7 +33,7 @@ export async function getPostcodeCombo(postcode){
 }
 
 export async function getWeather(postcode){
-  const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${postcode.postcode},GB&appid=3f673d4b77f551fe55cc4d54599dd4c7`)
+  const res = await fetch({secretKey})
   console.log('getWeather res: ',res)
   return res.json()
 }

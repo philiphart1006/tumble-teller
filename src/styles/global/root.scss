@@ -6,9 +6,11 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: calc(100vh - 12 * $standard-padding);
-  background-color: $light-grey;
+  min-height: calc(100vh - 12 * $standard-padding);
+  // background-color: $light-grey;
   padding: 6 * $standard-padding;
+  background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.8)),url('../assets/windfarm.jpg');
+  background-size: cover;
 
   img {
     width: 40%;

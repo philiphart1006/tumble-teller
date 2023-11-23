@@ -36,7 +36,7 @@ export default function Nav(){
     <Modal show={show} fullscreen={true} onHide={() => setShow(false)}>
       <Modal.Header closeButton>
         <nav onClick={() => setShow(false)}>
-          <Link to="/national"><i className='bold display-4'>Carbon Intensity by Region</i></Link>
+          <Link to="/national"><i className='bold display-4'>Carbon Intensity by region</i></Link>
           <Link to="/postcode"><i className='bold display-4'>Carbon Intensity for your location</i></Link>
           <Link to="/combo"><i className='bold display-4'>Should you use your Tumble Dryer today?</i></Link>
         </nav>
