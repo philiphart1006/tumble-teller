@@ -78,7 +78,7 @@ export default function Comboforecast(){
             { forecastsFinal.map((forecast) => {
               const { shortname, regionid, intensity, to } = forecast
               const datetime = new Date(to)
-              const date = `${datetime.getDate()}/${datetime.getMonth()}/${datetime.getFullYear()}`
+              const date = `${datetime.getDate()}/${datetime.getMonth() + 1}/${datetime.getFullYear()}`
               const time = `${datetime.getHours()}:${datetime.getMinutes()}${datetime.getMinutes()}`
               return (
                 <Row
