@@ -1,3 +1,4 @@
+// ! Imports
 // React imports
 import { useLoaderData} from 'react-router-dom'
 
@@ -6,12 +7,15 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from 'react-bootstrap/Col'
 
+// ! Default function
 export default function National(){
 
+  // Fetch data
   const region = useLoaderData()
   const regionsArr = region.data[0].regions
   console.log(regionsArr)
 
+  // ! JSX
   return (
     <>
       <h1 className='bold display-6'>Carbon intensity by region</h1>

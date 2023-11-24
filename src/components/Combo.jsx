@@ -28,6 +28,7 @@ export default function Combo(){
   const temp = weather?.main.temp - 273.1
   const humidity = weather?.main.humidity
 
+  // Recommendation variable & logic
   let recommendation
 
   if(main?.includes('rain')||main?.includes('storm')||main?.includes('snow')){
@@ -47,7 +48,7 @@ export default function Combo(){
       }
       else {recommendation = "Your local grid isn't too polluting currently and it's a tad chilly out - perhaps you can tumble today!"}
 
-
+// ! JSX
   return (
     <>
       <h1 className = 'display-3'>Should you use your tumble dryer today?</h1>

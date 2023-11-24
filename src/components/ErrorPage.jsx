@@ -1,6 +1,8 @@
+// ! Imports
 import { useRouteError } from "react-router-dom";
 import Otto from "../assets/otto.jpg"
 
+// ! Default function
 export default function ErrorPage() {
   const error = useRouteError()
   console.log('ERROR: ',error)

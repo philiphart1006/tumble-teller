@@ -1,3 +1,4 @@
+// ! Imports
 // React package imports
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -10,12 +11,13 @@ import logoSq from "../assets/ttlogosq.png"
 import logoWWF from "../assets/wwf.jpeg"
 import logoOx from "../assets/oxford.png"
 
-
+// ! Default function
 export default function Nav(){
 
   // State to open/close hamburger menu
   const [show, setShow] = useState(false)
 
+  // ! JSX
   return (
     <>
     <header>

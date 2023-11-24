@@ -1,9 +1,11 @@
+// ! Imports
 // Images
 import logoRect from '../assets/ttlogorect.png'
 
 // Packages
 import { Link } from 'react-router-dom'
 
+// ! Default function
 export default function Home(){
   return (
     <>

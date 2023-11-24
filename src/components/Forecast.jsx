@@ -1,3 +1,4 @@
+// ! Imports
 // React imports
 import { useLoaderData} from 'react-router-dom'
 
@@ -6,8 +7,10 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from 'react-bootstrap/Col'
 
+// ! Default function
 export default function Forecast(){
 
+  // Set variables & retrieve data
   const forecasts = useLoaderData()
   const forecastsArr = forecasts?.data
   // Only return every other index for hourly rather than half hourly data
@@ -15,8 +18,7 @@ export default function Forecast(){
     return (index % 2 === 0);
   })
 
-  console.log(forecastsHour)
-
+  // ! JSX
   return (
     <>
       <h1 className='bold display-6'>Nationwide carbon intensity by hour over next 48 hours</h1>

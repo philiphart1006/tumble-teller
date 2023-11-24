@@ -43,7 +43,7 @@ export default function Comboforecast(){
   }
   
   let weatherFinal = []
-  //! Remove nighthours
+  //* Remove nighthours
   // Remove from carbon intensity
   const forecastsFinal = forecastsThreeHour.filter(function(forecast){
     const forecastDate = new Date (forecast.to)
@@ -60,6 +60,7 @@ export default function Comboforecast(){
   // Set weather array to same length as carbon intensity array
   weatherArr && (weatherFinal.length = forecastsFinal?.length)
 
+  // ! JSX
   return (
     <>
       <h1 className = 'display-3'>When can you use your tumble dryer?</h1>
