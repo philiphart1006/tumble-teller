@@ -27,7 +27,7 @@ export default function Combo(){
   const windspeed = weather?.wind.speed
   const temp = weather?.main.temp - 273.1
   const humidity = weather?.main.humidity
-
+Ÿ
   // Recommendation variable & logic
   let recommendation
 
