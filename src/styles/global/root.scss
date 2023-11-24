@@ -16,6 +16,11 @@ main {
   img {
     width: 40%;
     border-radius: 20px;
+    transition: transform .7s ease-in-out
+  }
+
+  img:hover {
+    transform: rotate(360deg)
   }
 
   h4 {

@@ -122,7 +122,7 @@ export default function Comboforecast(){
                   ${(main.includes('rain')||main.includes('storm')||main.includes('snow')) ? 'high' : ''}
                   ${main.includes('sunny') ? 'low' : ''}
                   `}
-                  >Conditions: {main}</p>
+                  >{main}</p>
                   <p
                   className={`
                   ${windspeed < 1 ? 'high' : ''}
