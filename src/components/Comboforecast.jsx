@@ -42,6 +42,7 @@ export default function Comboforecast(){
     forecastsThreeHour.shift()
   }
   
+  let weatherFinal = []
   //! Remove nighthours
   // Remove from carbon intensity
   const forecastsFinal = forecastsThreeHour.filter(function(forecast){
@@ -50,14 +51,14 @@ export default function Comboforecast(){
     return (forecastHour > 8 && forecastHour < 19)
   })
   // Remove from weather
-  const weatherFinal = weatherArr?.filter(function(weather){
+  weatherFinal = weatherArr?.filter(function(weather){
     const weatherDate = new Date (weather.dt * 1000)
     const weatherHour = weatherDate.getHours()
     return (weatherHour > 8 && weatherHour < 19)
   })
 
   // Set weather array to same length as carbon intensity array
-  weatherFinal.length = forecastsFinal?.length
+  weatherArr && (weatherFinal.length = forecastsFinal?.length)
 
   return (
     <>
