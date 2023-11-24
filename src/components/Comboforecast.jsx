@@ -112,7 +112,7 @@ export default function Comboforecast(){
               const datetime = new Date(dateTime)
               
               console.log(typeof(datetime))
-              const date = `${datetime.getDate()}/${datetime.getMonth()}/${datetime.getFullYear()}`
+              const date = `${datetime.getDate()}/${datetime.getMonth() + 1}/${datetime.getFullYear()}`
               const time = `${datetime.getHours()}:${datetime.getMinutes()}${datetime.getMinutes()}`
               return(
                 <Row className='region-container'
