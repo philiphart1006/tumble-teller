@@ -103,13 +103,10 @@ This project was undertaken as a solo effort over the course of 2 days: Wednesda
     * Descriptions of any unsolved problems or major hurdles your team had to overcome​
 
 
-## Planning {#planning}
+## Planning
 
 
-### Research {#research}
-
-
-### Project management {#project-management}
+### Project management
 
 Once again using a template Trello board, I split the application functionality and coding into separate _user stories_. I also included columns for bugs & enhancements. This helped me pseudocode & split out functionality into different components.
 
@@ -197,7 +194,7 @@ _N.B. Coding snippets & highlights can be found outlined in further detail in Wi
 * Attempt unsuccessfully to re-factor the multi-API request function
 
 
-## Challenges {#challenges}
+## Challenges
 
 
 #### Combining React & Bootstrap elements
@@ -207,7 +204,7 @@ I wanted to utilise the Form element from both React and, for styling, React-Boo
 Going forward, I would like to try and make more use of React Bootstrap for styling.
 
 
-## Wins {#wins}
+## Wins
 
 
 #### Combo Components
@@ -235,7 +232,7 @@ Visually, I also used conditional formatting with the same parameters to allow v
 
 
 
-## Key Learnings/Takeaways {#key-learnings-takeaways}
+## Key Learnings/Takeaways
 
 
 #### Styling
@@ -284,10 +281,10 @@ By using comprehensive messaging within my commits, I am able to easily look bac
 
 
 
-## Bugs {#bugs}
+## Bugs
 
 
-#### Resolved bugs {#resolved-bugs}
+#### Resolved bugs
 
 ![Resolved bugs](images/image7.png "image_tooltip")
 
@@ -305,9 +302,9 @@ _Watch this space! Player reported bugs will appear via [this form](https://form
 ![Bug reporter zap](images/image6.png "image_tooltip")
 
 
-## Future Improvements {#future-improvements}
+## Future Improvements
 
 
-#### Remaining desired enhancements {#remaining-desired-enhancements}
+#### Remaining desired enhancements
 
 It would be good to have multiple inputs on the form to allow a user to select: day/time if not current, how environmentally minded they’d like the recommendations to be.
